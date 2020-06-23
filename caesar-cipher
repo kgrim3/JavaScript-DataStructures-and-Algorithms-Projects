@@ -1,0 +1,28 @@
+function rot13(str) {
+  let alph = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  let ciph = ["N","O","P","Q","R","S","T","U","V","W","X","Y","Z","A","B","C","D","E","F","G","H","I","J","K","L","M"];
+  let final = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
+      final+=str[i];
+    } else if (str[i] === "?") {
+      final+=str[i];
+    } else if (str[i] === ".") {
+      final+=str[i];
+    } else if (str[i] === "!") {
+      final+=str[i];
+    }
+    for (let k = 0; k < alph.length; k++) {
+      if (str[i] === ciph[k]) {
+        final += alph[k];
+      }
+    }
+  }
+  console.log(str.charAt(4));
+  console.log(ciph[0])
+  console.log(final)
+  return final;
+}
+
+rot13("SERR PBQR PNZC");
+// decrypt the given string, pass any non-letters
